@@ -5,15 +5,10 @@ public class Jogador{
    private String role;
    private int pontuacaoDeHabilidade;
       
-   public void adicionarJogador(){
-      Scanner scanner = new Scanner(System.in);
-      
-      System.out.println("Digite o ID do jogador");
-      this.ID = scanner.nextLine();
-      System.out.println("Digite a role do jogador, sendo elas carregador, suporte, mago ou tanker");
-      this.role = scanner.nextLine();
-      System.out.println("Digite a pontuação de habilidade");
-      this.pontuacaoDeHabilidade = scanner.nextInt();
+   public Jogador(String ID, String role, int pontuacaoDeHabilidade){
+      this.ID = ID;
+      this.role = role;
+      this.pontuacaoDeHabilidade = pontuacaoDeHabilidade;
    }
    
    public String getID(){
@@ -26,5 +21,17 @@ public class Jogador{
    
    public int getPontuacaoDeHabilidade(){
       return this.pontuacaoDeHabilidade;
+   }
+   
+   public void setID(String elemento){
+      this.ID = elemento;
+   }
+   
+   public void setRole(String elemento){
+      this.role = elemento;
+   }
+   
+   public void setPontuacaoDeHabilidade(int elemento){
+      this.pontuacaoDeHabilidade = elemento;
    }
 }
