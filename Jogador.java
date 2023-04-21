@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Jogador{
    private String ID;
    private String role;
@@ -34,4 +32,9 @@ public class Jogador{
    public void setPontuacaoDeHabilidade(int elemento){
       this.pontuacaoDeHabilidade = elemento;
    }
+   
+   public String toString() {
+      return "ID: " + this.ID + "; Role: " + this.role + "; Pontuação de Habilidade: " + this.pontuacaoDeHabilidade;
+   }
+   // O método acima reescreve a representação em forma de String do Objeto em questão.
 }

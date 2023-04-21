@@ -10,7 +10,7 @@ public class Menu{
       int opcao = 0;
       
       while(opcao != 4){
-         System.out.println("1. Adicionar jogador\n2. Ver jogadores em espera\n3. Ver partidas em andamento\n4. Sair\n");
+         System.out.println("---- MATCHMAKING MENU -----\n1. Adicionar jogador\n2. Ver jogadores em espera\n3. Ver partidas em andamento\n4. Sair\n");
          opcao = scanner.nextInt();
       
          if(opcao == 1){
@@ -18,6 +18,7 @@ public class Menu{
             System.out.println("Jogador adicionado com sucesso na lista\n");
             
          }else if(opcao == 2){
+            listaEspera.printListaEspera(); 
             
          }else if(opcao == 3){
          

@@ -25,5 +25,6 @@ public class No{
    
    public void setDados(String ID, String role, int pontuacaoDeHabilidade){
       Jogador jogador = new Jogador(ID, role, pontuacaoDeHabilidade);
+      this.dados = jogador;
    }   
 }

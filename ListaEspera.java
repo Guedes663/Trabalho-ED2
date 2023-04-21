@@ -25,20 +25,20 @@ public class ListaEspera{
       int pontuacaoDeHabilidade = scanner.nextInt();
       
       novoJogador.setDados(ID, role, pontuacaoDeHabilidade);
-      novoJogador.setProximo(cabeca.getProximo());
       novoJogador.setAnterior(cabeca);
+      novoJogador.setProximo(cabeca.getProximo());
       cabeca.getProximo().setAnterior(novoJogador);
       cabeca.setProximo(novoJogador);
-      tamanho ++; 
+      tamanho++; 
    }
    
    public void printListaEspera(){
       if(tamanho == 0){
-         System.out.println("Não existe nenhum jogador\n");
+         System.out.println("Nao existe nenhum jogador\n");
       } else{
          for(No atual = cabeca.getProximo(); atual != cauda; atual = atual.getProximo()){
             System.out.println(atual.getDados());
          }
-      }
+      }   
    }
 }
