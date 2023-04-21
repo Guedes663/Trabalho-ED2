@@ -6,6 +6,7 @@ public class Menu{
    public void menu(){
       Scanner scanner = new Scanner(System.in);
       ListaEspera listaEspera = new ListaEspera();
+      ListaAndamento listaAndamento = new ListaAndamento();
       
       int opcao = 0;
       
@@ -18,10 +19,12 @@ public class Menu{
             System.out.println("Jogador adicionado com sucesso na lista\n");
             
          }else if(opcao == 2){
-            listaEspera.printListaEspera(); 
+            listaEspera.ordenarLista(listaEspera);
+            listaEspera.printLista();
             
          }else if(opcao == 3){
-         
+
+            
          }else if(opcao == 4){
          
          }else{

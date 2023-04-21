@@ -33,6 +33,7 @@ public class Jogador{
       this.pontuacaoDeHabilidade = elemento;
    }
    
+   @Override
    public String toString() {
       return "ID: " + this.ID + "; Role: " + this.role + "; Pontuação de Habilidade: " + this.pontuacaoDeHabilidade;
    }
