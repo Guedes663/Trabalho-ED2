@@ -2,11 +2,11 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Menu{
-   ArrayList<Jogador> listaEspera = new ArrayList<Jogador>();
    
    public void menu(){
       Scanner scanner = new Scanner(System.in);
-      Jogador jogador = new Jogador();
+      ListaEspera listaEspera = new ListaEspera();
+      
       int opcao = 0;
       
       while(opcao != 4){
@@ -14,12 +14,10 @@ public class Menu{
          opcao = scanner.nextInt();
       
          if(opcao == 1){
-            jogador.adicionarJogador();
-            listaEspera.add(jogador);
+            listaEspera.adicionarJogador();
             System.out.println("Jogador adicionado com sucesso na lista\n");
             
          }else if(opcao == 2){
-            exibirListaEspera();
             
          }else if(opcao == 3){
          
@@ -28,13 +26,6 @@ public class Menu{
          }else{
             System.out.println("Opção inválida\n");
          }
-      }
-   }
-   
-   public void exibirListaEspera(){
-      Jogador jogador = new Jogador();
-      for(int i = 0; i < this.listaEspera.size(); i++){
-         System.out.println(listaEspera.get(i));
       }
    }
    
