@@ -21,10 +21,14 @@ public class Lista{
       return cauda;
    }
    
-   public void setTamanho(){
+   public void adicionarTamanho(){
       this.tamanho ++;
    }
    
+   public void diminuirTamanho(){
+      this.tamanho --;
+   }
+    
    public int getTamanho(){
       return this.tamanho;   
    }
@@ -57,5 +61,14 @@ public class Lista{
          }
       }   
    }
-
+   
+   public void removeFirst(Lista lista){
+      if(lista.getTamanho() == 0){
+         System.out.println("Nao existe no");
+      } else{
+         lista.getCabeca().getProximo().getProximo().setAnterior(cabeca);
+         lista.getCabeca().setProximo(lista.getCabeca().getProximo().getProximo());
+         lista.diminuirTamanho();   
+      }
+   }
 }

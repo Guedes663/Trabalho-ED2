@@ -25,5 +25,5 @@ public class ListaEspera extends Lista{
             atual = listaEspera.getCabeca();
         }
     }
-}
+   }
 }

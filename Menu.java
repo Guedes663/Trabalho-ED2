@@ -23,7 +23,10 @@ public class Menu{
             listaEspera.printLista();
             
          }else if(opcao == 3){
-
+            listaAndamento.dividirJogadores(listaEspera);
+            listaAndamento.formarTimes();
+            listaAndamento.removerJogadoresListaEsperaA(listaEspera);
+            listaAndamento.removerJogadoresListaEsperaB(listaEspera);
             
          }else if(opcao == 4){
          
