@@ -20,13 +20,12 @@ public class Menu{
             
          }else if(opcao == 2){
             listaEspera.ordenarLista(listaEspera);
-            listaEspera.printLista();
+            listaEspera.printLista(listaEspera);
             
          }else if(opcao == 3){
             listaAndamento.dividirJogadores(listaEspera);
             listaAndamento.formarTimes();
-            listaAndamento.removerJogadoresListaEsperaA(listaEspera);
-            listaAndamento.removerJogadoresListaEsperaB(listaEspera);
+            listaAndamento.printLista(listaAndamento.getTime());
             
          }else if(opcao == 4){
          

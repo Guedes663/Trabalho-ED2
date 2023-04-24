@@ -2,7 +2,6 @@ public class No{
    private No proximo;
    private No anterior;
    private Jogador dados;
-   private int indice;
    
    public No getProximo(){
       return this.proximo;
@@ -24,9 +23,6 @@ public class No{
       this.anterior = anterior;
    }
    
-   public void setIndice(int indice){
-      this.indice = indice;
-   }
    public void setDados(String ID, String role, int pontuacaoDeHabilidade){
       Jogador jogador = new Jogador(ID, role, pontuacaoDeHabilidade);
       this.dados = jogador;

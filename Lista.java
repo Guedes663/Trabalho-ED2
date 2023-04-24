@@ -1,9 +1,7 @@
-import java.util.Scanner;
-
 public class Lista{
-   private No cauda;
-   private No cabeca;
-   private int tamanho;
+   protected No cauda;
+   protected No cabeca;
+   protected int tamanho;
    
    public Lista(){
       cauda = new No();
@@ -33,42 +31,45 @@ public class Lista{
       return this.tamanho;   
    }
    
-   public void adicionarJogador(){
-      No novoJogador = new No();
-      Scanner scanner = new Scanner(System.in);
-      
-      System.out.println("Digite o ID do seu jogador\n");
-      String ID = scanner.nextLine();
-      System.out.println("Digite a role do seu jogador\n");
-      String role = scanner.nextLine();
-      System.out.println("Digite a pontuação de habilidade do jogador\n");
-      int pontuacaoDeHabilidade = scanner.nextInt();
-      
-      novoJogador.setDados(ID, role, pontuacaoDeHabilidade);
-      novoJogador.setAnterior(cabeca);
-      novoJogador.setProximo(cabeca.getProximo());
-      cabeca.getProximo().setAnterior(novoJogador);
-      cabeca.setProximo(novoJogador);
-      tamanho++; 
+   public void adicionarInicio(Lista lista, No novoNo){
+      novoNo.setAnterior(lista.getCabeca());
+      novoNo.setProximo(lista.getCabeca().getProximo());
+      lista.getCabeca().getProximo().setAnterior(novoNo);
+      lista.getCabeca().setProximo(novoNo);
+      lista.adicionarTamanho();   
    }
    
-   public void printLista(){
-      if(tamanho == 0){
+   public void adicionarFim(Lista lista, No novoNo){
+      novoNo.setProximo(lista.getCauda());
+      novoNo.setAnterior(lista.getCauda().getAnterior());
+      lista.getCauda().getAnterior().setProximo(novoNo);
+      lista.getCauda().setAnterior(novoNo);
+      lista.adicionarTamanho();   
+   }
+   
+   public void printLista(Lista lista){
+      if(lista.getTamanho() == 0){
          System.out.println("Nao existe nenhum jogador\n");
       } else{
-         for(No atual = cabeca.getProximo(); atual != cauda; atual = atual.getProximo()){
+         for(No atual = lista.getCabeca().getProximo(); atual != lista.getCauda(); atual = atual.getProximo()){
             System.out.println(atual.getDados());
          }
       }   
    }
    
    public void removeFirst(Lista lista){
-      if(lista.getTamanho() == 0){
-         System.out.println("Nao existe no");
-      } else{
-         lista.getCabeca().getProximo().getProximo().setAnterior(cabeca);
-         lista.getCabeca().setProximo(lista.getCabeca().getProximo().getProximo());
-         lista.diminuirTamanho();   
-      }
-   }
+    if(lista.getTamanho() == 0){
+        System.out.println("A lista está vazia, não é possível remover.");
+    } else {
+        No primeiroNo = lista.getCabeca().getProximo();
+        if(primeiroNo != null) {
+            No segundoNo = primeiroNo.getProximo();
+            if(segundoNo != null) {
+                segundoNo.setAnterior(lista.getCabeca());
+            }
+            lista.getCabeca().setProximo(segundoNo);
+            lista.diminuirTamanho();
+        }
+    }
+   }   
 }

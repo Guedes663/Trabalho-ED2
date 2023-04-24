@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ListaEspera extends Lista{
       
    public void ordenarLista(Lista listaEspera){
@@ -25,5 +27,24 @@ public class ListaEspera extends Lista{
             atual = listaEspera.getCabeca();
         }
     }
+   }
+   
+   public void adicionarJogador(){
+      No novoJogador = new No();
+      Scanner scanner = new Scanner(System.in);
+      
+      System.out.println("Digite o ID do seu jogador\n");
+      String ID = scanner.nextLine();
+      System.out.println("Digite a role do seu jogador\n");
+      String role = scanner.nextLine();
+      System.out.println("Digite a pontuação de habilidade do jogador\n");
+      int pontuacaoDeHabilidade = scanner.nextInt();
+      
+      novoJogador.setDados(ID, role, pontuacaoDeHabilidade);
+      novoJogador.setAnterior(cabeca);
+      novoJogador.setProximo(cabeca.getProximo());
+      cabeca.getProximo().setAnterior(novoJogador);
+      cabeca.setProximo(novoJogador);
+      tamanho++; 
    }
 }
